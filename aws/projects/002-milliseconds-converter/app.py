@@ -14,20 +14,19 @@ def convert(millisecond):
 
     seconds = millisecond_left // 1000
 
-    return f'{hours} hour/s '*(hours!=0) + f'{minutes} minute/s '*(minutes!=0) + f'{seconds} second/s '*(seconds!=0) or f'just {millisecond} millisecond/s'
-
+    return f'{hours} hour/s '*(hours!=0) + f'{minutes} minute/s '*(minutes!=0) + f'{seconds} second/s '*(seconds!=0) or f'just {millisecond} millisecoİsa
 @app.route('/', methods=['GET'])
 def main_get():
-        return render_template('index.html', developer_name ='Serdar', not_valid = False)
+        return render_template('index.html', developer_name ='İsa', not_valid = False)
 
 @app.route('/', methods=['POST'])
 def main_post():
     alpha = request.form['number']
     if not alpha.isdecimal():
-        return render_template('index.html', developer_name = 'Serdar', not_valid = True)
+        return render_template('index.html', developer_name = 'İsa', not_valid = True)
     if not (0 < int(alpha)):
-        return render_template('index.html', developer_name = 'Serdar', not_valid = True)
-    return render_template('result.html', developer_name=' Serdar', milliseconds = alpha, result = convert(int(alpha)) )
+        return render_template('index.html', developer_name = 'İsa', not_valid = True)
+    return render_template('result.html', developer_name=' İsa', milliseconds = alpha, result = convert(int(alpha)) )
 
 if __name__ == '__main__':
     #app.run(debug=True)
